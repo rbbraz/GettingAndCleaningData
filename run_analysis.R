@@ -33,4 +33,4 @@ filteredSet$Activity <- activity_labels[filteredSet$Activity,]$V2
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tidySet <- aggregate(filteredSet[,3:dim(filteredSet)[2]], list(Subject = filteredSet$Subject, Activity = filteredSet$Activity), mean)
 
-write.table(tidySet, "tidy_data.txt")
+write.table(tidySet, "tidy_data.txt", row.names = FALSE)
